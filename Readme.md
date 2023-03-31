@@ -14,9 +14,9 @@ The given dataset contained seed and team. in order to simulate team advancement
 
 Logical considerations 
   - Initial Round has 16, 
-  - 2nd round (Quater final) has 8
-  - 3rd round (Semi Final) has 4  
-  - Final round has 2 teams. 
+  - 2nd round (Quater final) has 8 (4 matches)
+  - 3rd round (Semi Final) has 4 (2 matches)
+  - Final round has 2 teams. (1 match)
   - Winner.
 
 IWorldCupTournament interface 
