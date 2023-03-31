@@ -47,9 +47,6 @@ WorldCupTournament concreat class implements IWorldCupTournament inteface.
 
 /src/BracketGenerator.Core/Application/Interfaces/IWorldCupTournament
         
-        
-namespace Application.Interfaces.BracketGenerator
-{
     public interface IWorldCupTournament
     {
         void SimulateTournament();
@@ -58,15 +55,9 @@ namespace Application.Interfaces.BracketGenerator
         void AdvanceTeam(TeamDto winningTeam, TeamDto loosingTeam);
         List<string> PathToVictory(string teamName);
     }
-}
 
 /src/BracketGenerator.Core/Application/BracketGenerator/WorldCupTournament
         
-        using Application.Dto;
-using Application.Interfaces.BracketGenerator;
-
-namespace Application.BracketGenerator
-{
     public class WorldCupTournament : IWorldCupTournament
     {
         private readonly IList<TeamDto> _roundOfSixteen;
@@ -95,7 +86,6 @@ namespace Application.BracketGenerator
 
             _bracket[winningTeam.TeamName].Add(loosingTeam);
         }
-
 
         public string GetTournamentWinner()
         {
@@ -152,10 +142,10 @@ namespace Application.BracketGenerator
 
                 currentRound = nextRound;
                 nextRound = new List<TeamDto>();
-            }
+          }
 
-            _winner = currentRound[0].TeamName;
-        }
+        _winner = currentRound[0].TeamName;
+    }
 
         private int CalculateEloWinProbability(int rating1, int rating2)
         {
@@ -172,81 +162,66 @@ namespace Application.BracketGenerator
             winner.EloRating += kFactor * (1 - winProbabilityWinner);
             loser.EloRating += kFactor * (0 - winProbabilityLoser);
         }
-
     }
-}
     
 Unit Tests
 ----------
 /tests/BracketGenerator.Core/Application.Test/BracketGenerator/TournamentBracketTests 
-        
-        using Application.Dto;
-using Application.Interfaces.BracketGenerator;
-using Domain.Entities;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Xunit;
 
-namespace Application.BracketGenerator.Tests;
 
-public class TournamentBracketTests
-{
-
-    [Fact]
-    public void Tournament_Simulation_Test()
-    {
-        //Arrage
-        var teams = GenerateTeamsFromJson();
-
-        var tournament = new WorldCupTournament(teams);
-
-        // Act
-        tournament.SimulateTournament();
-
-        var winner = tournament.GetTournamentWinner();
-
-        var pathToVictory = tournament.PathToVictory(winner);
-
-        // Assert
-        winner.ShouldNotBeNull();
-        winner.ShouldNotBeEmpty();
-
-        pathToVictory.ShouldNotBeNull();
-        pathToVictory.ShouldNotBeEmpty();
-    }
-
-    private List<TeamDto> GenerateTeamsFromJson()
-    {
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "SeedFile.json");
-        var json = File.ReadAllText(filePath);
-
-        var jsonObject = JObject.Parse(json);
-        var teamsJsonArray = (JArray)jsonObject["R16"];
-
-        var teams = new List<TeamDto>();
-
-        foreach (var teamJson in teamsJsonArray)
+        public class TournamentBracketTests
         {
-            string seed = teamJson["Seed"].ToString();
-            string teamName = teamJson["TeamName"].ToString();
-            int eloRating = int.Parse(teamJson["EloRating"].ToString());
 
-            teams.Add(new TeamDto
+            [Fact]
+            public void Tournament_Simulation_Test()
             {
-                Seed = seed,
-                TeamName = teamName,
-                EloRating = eloRating
-            });
-        }
+                //Arrage
+                var teams = GenerateTeamsFromJson();
 
-        return teams;
-    }
-}
+                var tournament = new WorldCupTournament(teams);
+
+                // Act
+                tournament.SimulateTournament();
+
+                var winner = tournament.GetTournamentWinner();
+
+                var pathToVictory = tournament.PathToVictory(winner);
+
+                // Assert
+                winner.ShouldNotBeNull();
+                winner.ShouldNotBeEmpty();
+
+                pathToVictory.ShouldNotBeNull();
+                pathToVictory.ShouldNotBeEmpty();
+            }
+
+            private List<TeamDto> GenerateTeamsFromJson()
+            {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "SeedFile.json");
+                var json = File.ReadAllText(filePath);
+
+                var jsonObject = JObject.Parse(json);
+                var teamsJsonArray = (JArray)jsonObject["R16"];
+
+                var teams = new List<TeamDto>();
+
+                foreach (var teamJson in teamsJsonArray)
+                {
+                    string seed = teamJson["Seed"].ToString();
+                    string teamName = teamJson["TeamName"].ToString();
+                    int eloRating = int.Parse(teamJson["EloRating"].ToString());
+
+                    teams.Add(new TeamDto
+                    {
+                        Seed = seed,
+                        TeamName = teamName,
+                        EloRating = eloRating
+                    });
+                }
+
+                return teams;
+            }
+       }
     
 ### Unit test for these has writen and they pass. 
     
