@@ -17,6 +17,7 @@ Logical considerations
   - 2nd round (Quater final) has 8
   - 3rd round (Semi Final) has 4  
   - Final round has 2 teams. 
+  - Winner.
 
 IWorldCupTournament interface 
 
