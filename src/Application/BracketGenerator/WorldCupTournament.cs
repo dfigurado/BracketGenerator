@@ -5,12 +5,12 @@ namespace Application.BracketGenerator
 {
     public class WorldCupTournament : IWorldCupTournament
     {
-        private readonly List<TeamDto> _roundOfSixteen;
+        private readonly IList<TeamDto> _roundOfSixteen;
         private readonly Dictionary<string, List<TeamDto>> _bracket;
 
         private string _winner;
 
-        public WorldCupTournament(List<TeamDto> roundOf16)
+        public WorldCupTournament(IList<TeamDto> roundOf16)
         {
             _roundOfSixteen = roundOf16;
             _bracket = new Dictionary<string, List<TeamDto>>();
@@ -57,8 +57,8 @@ namespace Application.BracketGenerator
 
         public void SimulateTournament()
         {
-            List<TeamDto> currentRound = _roundOfSixteen;
-            List<TeamDto> nextRound = new List<TeamDto>();
+            var currentRound = _roundOfSixteen;
+            var nextRound = new List<TeamDto>();
 
             while (currentRound.Count > 1)
             {
