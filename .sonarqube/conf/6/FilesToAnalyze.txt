@@ -1,0 +1,5 @@
+﻿D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\src\Domain\Common\Base\BaseEntity.cs
+D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\src\Domain\Entities\Match.cs
+D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\src\Domain\Entities\Score.cs
+D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\src\Domain\Entities\Team.cs
+D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\src\Domain\Entities\Tournament.cs

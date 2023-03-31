@@ -1,0 +1,85 @@
+{
+  "R16" : 
+  [
+    {
+      "Seed" : "1A",
+      "TeamName": "Netherlands",
+      "EloRating":  1000
+    },
+    {
+      "Seed": "2A",
+      "TeamName": "Qatar",
+      "EloRating": 1500
+    },
+    {
+      "Seed": "1B",
+      "TeamName": "England",
+      "EloRating": 1900
+    },
+    {
+      "Seed": "2B",
+      "TeamName": "USA",
+      "EloRating": 1600
+    },
+    {
+      "Seed": "1C",
+      "TeamName": "Argentina",
+      "EloRating": 2000
+    },
+    {
+      "Seed": "2C",
+      "TeamName": "Mexico",
+      "EloRating": 1700
+    },
+    {
+      "Seed": "1D",
+      "TeamName": "France",
+      "EloRating": 2100
+    },
+    {
+      "Seed": "2D",
+      "TeamName": "Denmark",
+      "EloRating": 1800
+    },
+    {
+      "Seed": "1E",
+      "TeamName": "Germany",
+      "EloRating": 1900
+    },
+    {
+      "Seed": "2E",
+      "TeamName": "Japan",
+      "EloRating": 1500
+    },
+    {
+      "Seed": "1F",
+      "TeamName": "Belgium",
+      "EloRating": 2000
+    },
+    {
+      "Seed": "2F",
+      "TeamName": "Canada",
+      "EloRating": 1600
+    },
+    {
+      "Seed": "1G",
+      "TeamName": "Brazil",
+      "EloRating": 2100
+    },
+    {
+      "Seed": "2G",
+      "TeamName": "Cameroon",
+      "EloRating": 1700
+    },
+    {
+      "Seed": "1H",
+      "TeamName": "Portugal",
+      "EloRating": 1800
+    },
+    {
+      "Seed": "2H",
+      "TeamName": "Uruguay",
+      "EloRating": 1900
+    }
+  ]
+}
