@@ -1,1 +1,0 @@
-D:\Learnings\amuse\CodingChallenge.Backend.BracketGenerator\BracketGenerator\.sonarqube\out\10

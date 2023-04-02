@@ -45,9 +45,7 @@ builder.Logging.ClearProviders();
 
 // Capture all log-level entries from Program
 
-
 // Configure Application Insights
-
 
 // Configure CORS
 builder.Services.AddCors(options =>

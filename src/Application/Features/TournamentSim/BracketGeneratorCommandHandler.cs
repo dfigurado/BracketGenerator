@@ -21,7 +21,6 @@ namespace Application.Features.TournamentSim
 
         public async Task<object> Handle(BracketGeneratorCommand request, CancellationToken cancellationToken)
         {
-
             // Get Participating Teams
             var teams = _unitOfWork.GetRepository<Domain.Entities.Team>().GetAll().ToList();
 

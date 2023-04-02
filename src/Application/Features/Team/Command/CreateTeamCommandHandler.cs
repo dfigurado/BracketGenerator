@@ -1,16 +1,7 @@
 ﻿using Application.Common.Base.CQRS;
-using Application.Dto;
-using AutoMapper.QueryableExtensions;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Persistence.Common.UnitOfWork;
-using Persistence.Interfaces.DbContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using SoccerTeam = Domain.Entities.Team;
 
@@ -27,17 +18,15 @@ namespace Application.Features.Team.Command
 
         public async Task<IList<SoccerTeam>> Handle(CreateTeamCommand request, CancellationToken cancellationToken)
         {
-            if (request.Seed.Count > 0)
-                return null;
-
             IList<SoccerTeam> teams = new List<SoccerTeam>();
 
-            foreach (var t in request.Seed)
+            foreach (var t in request.Teams)
             {
                 teams.Add(new SoccerTeam
                 {
                     Seed = t.Seed,
                     TeamName = t.TeamName,
+                    EloRating = Convert.ToInt32(t.EloRating),
                     TournamentId = request.TournamentId
                 });
             }

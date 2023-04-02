@@ -7,7 +7,7 @@ namespace Persistence.Context.Extensions.Seeds
     {
         public static void SeedData(this ModelBuilder modelBuilder)
         {
-            _ = modelBuilder.Entity<Tournament>().HasData(
+            modelBuilder.Entity<Tournament>().HasData(
                 new Tournament
                 {
                     Id = 1,
@@ -15,13 +15,13 @@ namespace Persistence.Context.Extensions.Seeds
                 }
             );
 
-            _ = modelBuilder.Entity<Team>().HasData(
+            modelBuilder.Entity<Team>().HasData(
                  new Team
                  {
                      Id = 1,
                      Seed = "1A",
                      TeamName = "Netherlands",
-                     EloRating = 1500,
+                     EloRating = 1000,
                      TournamentId = 1
                  },
                 new Team
@@ -37,7 +37,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 3,
                     Seed = "1B",
                     TeamName = "England",
-                    EloRating = 1500,
+                    EloRating = 1900,
                     TournamentId = 1
                 },
                 new Team
@@ -45,7 +45,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 4,
                     Seed = "2B",
                     TeamName = "USA",
-                    EloRating = 1500,
+                    EloRating = 1600,
                     TournamentId = 1
                 },
                 new Team
@@ -53,7 +53,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 5,
                     Seed = "1C",
                     TeamName = "Argentina",
-                    EloRating = 1500,
+                    EloRating = 2000,
                     TournamentId = 1
                 },
                 new Team
@@ -61,7 +61,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 6,
                     Seed = "2C",
                     TeamName = "Mexico",
-                    EloRating = 1500,
+                    EloRating = 1700,
                     TournamentId = 1
                 },
                 new Team
@@ -69,7 +69,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 7,
                     Seed = "1D",
                     TeamName = "France",
-                    EloRating = 1500,
+                    EloRating = 2100,
                     TournamentId = 1
                 },
                 new Team
@@ -77,7 +77,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 8,
                     Seed = "2D",
                     TeamName = "Denmark",
-                    EloRating = 1500,
+                    EloRating = 1800,
                     TournamentId = 1
                 },
                 new Team
@@ -85,7 +85,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 9,
                     Seed = "1E",
                     TeamName = "Germany",
-                    EloRating = 1500,
+                    EloRating = 1900,
                     TournamentId = 1
                 },
                 new Team
@@ -101,7 +101,7 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 11,
                     Seed = "1F",
                     TeamName = "Belgium",
-                    EloRating = 1500,
+                    EloRating = 2000,
                     TournamentId = 1
                 },
                 new Team
@@ -109,31 +109,39 @@ namespace Persistence.Context.Extensions.Seeds
                     Id = 12,
                     Seed = "2F",
                     TeamName = "Canada",
-                    EloRating = 1500,
+                    EloRating = 1600,
                     TournamentId = 1
                 },
                 new Team
                 {
                     Id = 13,
-                    Seed = "2G",
-                    TeamName = "Cameroon",
-                    EloRating = 1500,
+                    Seed = "1G",
+                    TeamName = "Brazil",
+                    EloRating = 2100,
                     TournamentId = 1
                 },
                 new Team
                 {
                     Id = 14,
-                    Seed = "1H",
-                    TeamName = "Portugal",
-                    EloRating = 1500,
+                    Seed = "2G",
+                    TeamName = "Cameroon",
+                    EloRating = 1700,
                     TournamentId = 1
                 },
                 new Team
                 {
                     Id = 15,
+                    Seed = "1H",
+                    TeamName = "Portugal",
+                    EloRating = 1800,
+                    TournamentId = 1
+                },
+                new Team
+                {
+                    Id = 16,
                     Seed = "2H",
                     TeamName = "Uruguay",
-                    EloRating = 1500,
+                    EloRating = 1900,
                     TournamentId = 1
                 });
         }

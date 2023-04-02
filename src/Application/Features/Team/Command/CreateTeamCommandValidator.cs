@@ -8,11 +8,11 @@ namespace Application.Features.Team.Command
         {
             RuleLevelCascadeMode = CascadeMode.Stop;
 
-            _ = RuleFor(x => x.Seed)
-                .NotEmpty().WithMessage("Seed is required")
-                .NotNull().WithMessage("Seed is required");
+            RuleFor(x => x.Teams)
+                .NotEmpty().WithMessage("Team is required")
+                .NotNull().WithMessage("Team is required");
 
-            _ = RuleFor(x => x.TournamentId)
+            RuleFor(x => x.TournamentId)
                 .NotEmpty().WithMessage("TournamentId is required");
         }
     }

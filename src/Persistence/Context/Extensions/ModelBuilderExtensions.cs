@@ -12,7 +12,7 @@ namespace Persistence.Context.Extensions
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
-            //modelBuilder.SeedData();
+            modelBuilder.SeedData();
         }
     }
 }

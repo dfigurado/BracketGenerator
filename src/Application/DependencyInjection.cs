@@ -1,5 +1,6 @@
 ﻿using Application.Behaviour;
 using Application.BracketGenerator;
+using Application.Dto;
 using Application.Features.Team.Command;
 using Application.Features.Team.Query;
 using Application.Features.Tournament.Command;
@@ -68,6 +69,8 @@ namespace Application
             services.AddScoped<IWorldCupTournament, WorldCupTournament>();
             services.AddScoped<IBracketGeneratorCommand, BracketGeneratorCommand>();
             services.AddScoped<ITournamentTeamsQuery, TournamentTeamsQuery>();
+
+            services.AddSingleton<IList<TeamDto>>(_ => new List<TeamDto>());
 
             // U
 
