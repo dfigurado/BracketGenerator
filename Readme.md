@@ -231,5 +231,5 @@ Unit Tests
     
 ### Issues 
 
-There is a DI issue with when runing the API project : Resolved
-Used SQL Light because locale SQL Express instance has SSL issue which took time than expected when working resolve.
+- There is a DI issue with when runing the API project : Resolved
+- Used SQL Light because locale SQL Express instance has SSL issue which took time than expected when working resolve.
