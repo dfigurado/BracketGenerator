@@ -1,9 +1,9 @@
 
 # Assumptions
 
-Used the given JSON of 16 teams as the data source. 
-Simulation purpose it was assumed that teams with low EloRating loose the game.
-The API is developed thinking it is a microservice. accessed by SPA.
+* Used the given JSON of 16 teams as the data source. 
+* Simulation purpose it was assumed that teams with low EloRating loose the game.
+* The API is developed thinking it is a microservice. accessed by SPA.
 
 ## Idea
 
