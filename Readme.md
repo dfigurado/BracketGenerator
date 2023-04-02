@@ -1,13 +1,14 @@
+## Idea
+
+Plan Was to implement a microservic that has endpoints to create tournament, add teams, simulate tournament, return a winner and winners path. 
 
 # Assumptions
 
 * Used the given JSON of 16 teams as the data source. 
 * Simulation purpose it was assumed that teams with low EloRating loose the game.
 * The API is developed thinking it is a microservice. accessed by SPA.
-
-## Idea
-
-Plan Was to implement a series of microservices that has endpoints to create tournament, add teams, simulate tournament, return a winner. 
+* Authorization / Authentication was considered out of scope.
+* Unit Testing covers the Tournament bracket logic only.
 
 ## Core 
 
@@ -230,4 +231,5 @@ Unit Tests
     
 ### Issues 
 
-There is a DI issue with when runing the API project. 
+There is a DI issue with when runing the API project : Resolved
+Used SQL Light because locale SQL Express instance has SSL issue which took time than expected when working resolve.
